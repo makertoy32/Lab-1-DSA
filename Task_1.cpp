@@ -7,7 +7,7 @@ void selectionSort(int *arr,int s);
 int main() {
 	// Test with an integer array of size 5
 	const int size = 5;
-	int intArray[size] = { 64, 25, 12, 22, 11 };
+	int intArray[size] = { 64, 25, 30, 22, 11 };
 	cout << "Original integer array: ";
 	printArray(intArray,size);
 	selectionSort(intArray,size);
@@ -38,15 +38,12 @@ void selectionSort(int *arr, int s){
 		{
 			if (arr[j] < arr[minNum]){
 				minNum = j;
-				//cout << j;
-				
-
 			}
-			//swapping
-			temp = arr[minNum];
-			arr[minNum] = arr[i];
-			arr[i] = temp;
+			
 		}
+		temp = arr[i];
+		arr[i] = arr[minNum];
+		arr[minNum] = temp;
 		
 	}
 	
